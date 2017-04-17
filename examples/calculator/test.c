@@ -7,15 +7,15 @@ void test_sum(){
 	WHEN("I execute sum");
 	IF("use numbers 3 and 5");
 	THEN("the result should be 8");
-	isEqual(sum(3,5), 8);
+	isEqual(sum(3,5), 8, 1);
 
 	IF("use numbers 0 and 0");
 	THEN("the result should be 0");
-	isEqual(sum(0, 0), 0);
+	isEqual(sum(0, 0), 0, 1);
 
 	IF("use numbers 7 and 1");
 	THEN("the result should be greater than 7");
-	isGreaterThan(sum(7, 1), 7);
+	isGreaterThan(sum(7, 1), 7, 1);
 }
 
 void test_sub() {
@@ -23,15 +23,18 @@ void test_sub() {
 	WHEN("I execute sub");
 	IF("use numbers 3 and 5");
 	THEN("the result should be -2");
-	isEqual(sub(3,5), -2);
+	isEqual(sub(3,5), -2, 1);
 
 	IF("use numbers 0 and 0");
 	THEN("the result should be 0");
-	isEqual(sum(0, 0), 0);
+	isEqual(sum(0, 0), 0, 1);
 }
 
 int main () {
 	test_sum();
 	test_sub();
+	DESCRIBE("Grading...");
+	GRADEME();
+	return 0;
 }
 
